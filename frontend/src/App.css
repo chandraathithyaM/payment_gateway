@@ -1,0 +1,160 @@
+/* ===================================
+   APP LAYOUT
+   =================================== */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+/* — Background Orbs — */
+.bg-orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-orb-1 {
+  width: 500px;
+  height: 500px;
+  background: var(--accent);
+  top: -150px;
+  right: -150px;
+  animation: float 8s ease-in-out infinite;
+}
+
+.bg-orb-2 {
+  width: 400px;
+  height: 400px;
+  background: #0984e3;
+  bottom: -100px;
+  left: -100px;
+  animation: float 10s ease-in-out infinite reverse;
+}
+
+.bg-orb-3 {
+  width: 300px;
+  height: 300px;
+  background: #e17055;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0.12;
+  animation: float 12s ease-in-out infinite;
+}
+
+/* — Header — */
+.app-header {
+  padding: var(--space-lg) var(--space-xl);
+  position: relative;
+  z-index: 10;
+  backdrop-filter: blur(12px);
+  background: rgba(10, 10, 15, 0.6);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  font-size: var(--font-xl);
+  font-weight: 800;
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+.header-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: var(--font-xs);
+  font-weight: 500;
+  color: var(--success);
+  background: var(--success-glow);
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  border: 1px solid rgba(0, 184, 148, 0.2);
+}
+
+/* — Main — */
+.app-main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+  position: relative;
+  z-index: 5;
+}
+
+/* — Footer — */
+.app-footer {
+  padding: var(--space-lg) var(--space-xl);
+  text-align: center;
+  position: relative;
+  z-index: 10;
+  border-top: 1px solid var(--border);
+  background: rgba(10, 10, 15, 0.6);
+  backdrop-filter: blur(12px);
+}
+
+.app-footer p {
+  font-size: var(--font-xs);
+  color: var(--text-muted);
+}
+
+.app-footer strong {
+  color: var(--accent-light);
+  font-weight: 600;
+}
+
+/* — Responsive — */
+@media (max-width: 768px) {
+  .app-header {
+    padding: var(--space-md);
+  }
+
+  .app-main {
+    padding: var(--space-md);
+  }
+
+  .bg-orb-1 {
+    width: 300px;
+    height: 300px;
+  }
+
+  .bg-orb-2 {
+    width: 250px;
+    height: 250px;
+  }
+
+  .bg-orb-3 {
+    display: none;
+  }
+}
